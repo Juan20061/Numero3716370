@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Numero3716370.MainPage">
+    
+    <FlexLayout Direction="Column">
+        <VerticalStackLayout Padding="15" FlexLayout.Basis="Auto" BackgroundColor="Beige">
+            <Entry x:Name="numeroEntryField" Placeholder="Agregue un numero" TextColor="Black" />
+            <Entry x:Name="determinadoEntryField" Placeholder="El numero es:" TextColor="Black" />
+            
+            <Button x:Name="saveButton" Text="Guardar" Clicked="saveButton_Clicked"/>
+        </VerticalStackLayout>
+        <ListView x:Name="listview" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="listview_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="5">
+                            <Label Text="{Binding Numero}" FontSize="17" FontAttributes="Bold"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Determinado}"/>
+                                <Label Grid.Column="2" Text="{Binding Movil}" FontAttributes="Bold"/>
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </FlexLayout>
+</ContentPage>
